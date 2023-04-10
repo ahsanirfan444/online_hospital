@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "60092403-2d5c-417b-95a1-728c518198b1",
+		"name": "Online hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19778018"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "ahsan.irfan@gmail.com1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Admin@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Domain}}/api-token-auth/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"api-token-auth",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Ahsan",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Irfan",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ahsan.irfan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "user_type",
+							"value": "P",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Admin@123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ahsan.irfan@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Domain}}/user/create_user/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"user",
+						"create_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_user_detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Domain}}/user/details/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"user",
+						"details",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_patient",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Domain}}/user/all_patient/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"user",
+						"all_patient",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_counsellor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Domain}}/user/all_counsellor/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"user",
+						"all_counsellor",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "patient",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "counsellor",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Domain}}/appointment/create_appointment/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"appointment",
+						"create_appointment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_appointments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "start_date",
+							"value": "2023-02-05",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-02-05",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Domain}}/appointment/all_appointments/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"appointment",
+						"all_appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_appointments_patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/appointment/all_appointments_patient/2/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"appointment",
+						"all_appointments_patient",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_appointments_counsellor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/appointment/all_appointments_counsellor/2/",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"appointment",
+						"all_appointments_counsellor",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
